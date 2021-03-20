@@ -1,0 +1,3 @@
+Un div no puede ser hijo de un ul.
+Los ul solo pueden tener hijos que sean li.
+El li se comporta como contenedor, por lo que es este elemento el que debe tener las clases del div.

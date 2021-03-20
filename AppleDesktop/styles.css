@@ -1,0 +1,296 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin:0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+  }
+
+/***************************************
+    MENÚ DE NAVEGACIÓN 
+***************************************/
+nav {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f5f5f7;
+    font-size: 14px;
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+}
+
+.nav-container {
+    width: 1000px;
+    height: 44px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo, #search, #bag {
+    width: 36px;
+    height: 44px;
+    background-repeat: no-repeat;  
+    cursor: pointer;
+}
+
+#logo {
+    background-image: url(images/logo.svg);
+    background-position: center;
+}
+
+#search {
+    background-image: url(images/search.svg);
+    background-position: 10px 0;
+    background-size: 18px 88px;
+}
+
+#bag {
+    background-image: url(images/bag.svg);
+    background-position: center;
+}
+
+a:link, a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+/***************************************
+    BARRA COVID
+***************************************/
+.covid, .shop-online {
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.covid {
+    color: #ffffff;
+    background-color: #0071e3;
+    margin-top: 44px;
+}
+
+/***************************************
+    BARRA SHOP
+***************************************/
+.shop-online {
+    color: #1d1d1f;
+    background-color: #f5f5f7; 
+}
+
+.shop-online a {
+    color: #0066cc;
+}
+
+.covid a:hover, .shop-online a:hover {
+    text-decoration: underline;
+}
+
+/***************************************
+    SLIDES MAIN
+***************************************/
+.iphone, .iphone_pro, .ipad {
+    width: 100%;
+    height: 692px;  
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin-bottom: 12px;
+}
+
+.iphone {
+    background-image: url(images/iphone.jpg);
+}
+
+.iphone_pro {
+    background-image: url(images/iphone_pro.jpg);
+}
+
+.ipad {
+    background-image: url(images/ipad_air.jpg);
+    background-color: #fbfbfd;
+}
+
+.iphone-text, .iphone_pro-text, .ipad-text {
+    width: 100%;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 55px;
+}
+
+.ipad-text {
+    padding-top: 0px;
+}
+
+.iphone-text h2, .iphone_pro-text h2, .ipad-text h2 {
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1.07143;
+}
+
+.iphone_pro-text h2 {
+    color: #1d1d1f;
+}
+
+.iphone_pro-text h2 {
+    color: #f5f5f7;
+}
+
+.iphone-text h3, .iphone_pro-text h3, .ipad-text h3 {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.07143;
+    margin-top: 6px;
+}
+
+.iphone-text h3 {
+    color: #1d1d1f;
+}
+
+.iphone_pro-text h3 {
+    color: #f5f5f7;
+}
+
+.iphone-text p, .iphone_pro-text p {
+    color: #86868b;
+}
+
+.iphone-text p:first-of-type, .iphone_pro-text p:first-of-type, .links-slides {
+    margin-top: 13.6px;
+}
+
+.links-slides {
+    width: 16%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 21px;
+}
+
+.links-slides a:hover {
+    text-decoration: underline;
+}
+
+.iphone-text .links-slides, .ipad-text .links-slides {
+    color: #0066cc;
+}
+
+.iphone_pro-text .links-slides {
+    color: #2997ff;
+}
+
+.first-row {
+    display: flex;
+    height: 580px;
+    margin: 0px 12px;
+}
+
+.card-left, .card-right {
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.first-row .card-left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 6px;
+    background-image: url(images/macbook_air.jpg);
+}
+
+.first-row .card-right {
+    margin-left: 6px;
+    background-color: #000000;
+    background-image: url(images/watch.jpg);
+}
+
+.card-left-text, .card-right-text {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-left-text h4, .card-right-text h4 {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.card-left-text h4 {
+    color: #f5f5f7;
+    margin-top: 5px;
+}
+
+.card-left-text h5, .card-right-text h5 {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.2381;
+    margin-top: 6px;
+}
+
+.card-left-text h5 {
+    margin-top: 6px;
+}
+
+.card-right-text h5 {
+    margin-top: 11px;
+}
+
+.card-left-text h5, .card-right-text h5 {
+    color: #f5f5f7;
+}
+
+.links-cards {
+    width: 28%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+}
+
+.links-cards a:hover {
+    text-decoration: underline;
+}
+
+.card-left-text .links-cards, .card-right-text .links-cards {
+    color: #2997ff;
+    margin-top: 13.6px;
+}
+
+.one {
+    width: 128px;
+    height: 59px;
+    background-image: url(images/watch_logo.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 128px 50px;
+}
+
+

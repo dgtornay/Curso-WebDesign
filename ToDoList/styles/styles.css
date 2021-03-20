@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: lightgray;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.list__container > ul {
+  list-style-type: disc;
+  margin: 30px 40px;
+}
+
+.list__container > ul > .list__item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list__item-container > .list__item > span {
+  cursor: pointer
+}
+
+.list__item-container > .list__item-completed {
+  text-decoration: line-through;
+}
+
+.form__container {
+  margin-left: 30px;
+}
+
+input::placeholder {
+  font-style: italic;
+}
