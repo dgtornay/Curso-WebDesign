@@ -30,16 +30,21 @@ h1 {
 }
 
 .list__container > ul > .list__item-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: list-item;
+  position: relative;
 }
 
-.list__item-container > .list__item > span {
-  cursor: pointer
+.list__container > ul > .list__item-container > .list__item {
+  display: inline;
 }
 
-.list__item-container > .list__item-completed {
+.list__container > ul > .list__item-container > span {
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+}
+
+.list__container > ul > .list__item-container > .list__item-completed {
   text-decoration: line-through;
 }
 

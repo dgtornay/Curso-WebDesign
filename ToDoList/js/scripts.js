@@ -1,13 +1,13 @@
 function insertListItem(task) {
 
-  const newItem = document.createElement('div');
+  const newItem = document.createElement('li');
   newItem.classList.add('list__item-container');
-  newItem.innerHTML = `<li class="list__item">${task}</li><span>X</span>`;
+  newItem.innerHTML = `<p class="list__item">${task}</p><span>X</span>`;
 
   const list = document.querySelector('ul');
-  list.appendChild(newItem)
+  list.appendChild(newItem);
 
-  markItemAsCompletedListener(newItem.querySelector('li'));
+  markItemAsCompletedListener(newItem);
   deleteItemListener(newItem.querySelector('span'));
 };
 
