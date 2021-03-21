@@ -2,7 +2,7 @@ function insertListItem(task) {
 
   const newItem = document.createElement('li');
   newItem.classList.add('list__item-container');
-  newItem.innerHTML = `<p class="list__item">${task}</p><span>X</span>`;
+  newItem.innerHTML = `<p class="list__item">${task}</p><span></span>`;
 
   const list = document.querySelector('ul');
   list.appendChild(newItem);
@@ -29,7 +29,9 @@ window.addEventListener('DOMContentLoaded', function() {
   const listItems = document.querySelectorAll('.list__item');
 
   form.addEventListener('submit', function (event) {
-    insertListItem(textInput.value);
+    if (textInput.value !== "") {
+      insertListItem(textInput.value);
+    }
     textInput.value = "";
     event.preventDefault();
   });

@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background-color: lightgray;
+  background-color: #c1c8e4;
 }
 
 .container {
@@ -22,16 +22,21 @@ h1 {
   font-size: 24px;
   text-align: center;
   margin-top: 20px;
+  background-color: #8860d0;
+  color: white;
+  font-weight: bold;
 }
 
 .list__container > ul {
   list-style-type: disc;
-  margin: 30px 40px;
+  margin: 30px 50px;
+  font-weight: bold;
 }
 
 .list__container > ul > .list__item-container {
   display: list-item;
   position: relative;
+  color: #5680e9
 }
 
 .list__container > ul > .list__item-container > .list__item {
@@ -41,7 +46,12 @@ h1 {
 .list__container > ul > .list__item-container > span {
   cursor: pointer;
   position: absolute;
-  right: 0px;
+  width: 12px;
+  height: 12px;
+  right: 10px;
+  top: 2px;
+  background-image: url(../images/close.png);
+  background-repeat: round;
 }
 
 .list__container > ul > .list__item-container > .list__item-completed {
@@ -52,6 +62,14 @@ h1 {
   margin-left: 30px;
 }
 
+input {
+  font-weight: bold;
+  color: white;
+  background-color: #8860d0;
+}
+
 input::placeholder {
+  font-weight: lighter;
   font-style: italic;
+  color: #fdfffcd8;
 }
