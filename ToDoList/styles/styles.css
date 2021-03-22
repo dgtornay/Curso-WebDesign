@@ -8,23 +8,37 @@ html {
 }
 
 body {
-  background-color: #c1c8e4;
+  background-color: #e8f1f2;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   max-width: 720px;
-  margin: 0 auto;
+  margin: 5px 5px;
 }
 
-h1 {
-  font-size: 24px;
-  text-align: center;
-  margin-top: 20px;
-  background-color: #8860d0;
-  color: white;
-  font-weight: bold;
+.container > .form__container > form {
+  display: flex;
+}
+
+.form__container > form > input {
+  border: none;
+  height: 48px;
+}
+
+.form__container > form > input[type="text"] {
+  background-color: #0e1f2f;
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.form__container > form > input[type="submit"] {
+  width: 48px;
+  font-size: 36px;
+  font-weight: lighter;
+  background-color: #006494;
 }
 
 .list__container > ul {
@@ -35,8 +49,9 @@ h1 {
 
 .list__container > ul > .list__item-container {
   display: list-item;
+  margin: 10px auto;
   position: relative;
-  color: #5680e9
+  color: #1b98e0;
 }
 
 .list__container > ul > .list__item-container > .list__item {
@@ -58,12 +73,7 @@ h1 {
   text-decoration: line-through;
 }
 
-.form__container {
-  margin-left: 30px;
-}
-
 input {
-  font-weight: bold;
   color: white;
   background-color: #8860d0;
 }

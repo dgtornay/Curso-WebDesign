@@ -24,7 +24,7 @@ function deleteItemListener (listItemX) {
 })};
 
 window.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('#todo__form');
+  const form = document.querySelector('form');
   const textInput = document.querySelector('input[type="text"]');
   const listItems = document.querySelectorAll('.list__item');
 
