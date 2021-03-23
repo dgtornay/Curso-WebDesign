@@ -24,13 +24,21 @@ body {
 
 .form__container > form > input {
   border: none;
-  height: 48px;
+  height: 42px;
 }
 
 .form__container > form > input[type="text"] {
+  color: white;
   background-color: #0e1f2f;
   width: 100%;
   padding: 15px;
+  font-size: 16px;
+}
+
+.form__container > form > input[type="text"]::placeholder {
+  font-weight: lighter;
+  font-style: italic;
+  color: #fdfffcd8;
   font-size: 16px;
 }
 
@@ -38,48 +46,43 @@ body {
   width: 48px;
   font-size: 36px;
   font-weight: lighter;
+  color: white;
   background-color: #006494;
 }
 
 .list__container > ul {
-  list-style-type: disc;
-  margin: 30px 50px;
   font-weight: bold;
 }
 
 .list__container > ul > .list__item-container {
-  display: list-item;
-  margin: 10px auto;
+  display: flex;
+  align-items: center;
   position: relative;
-  color: #1b98e0;
+  border-right: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
+  border-left: 1px solid #d3d3d3;
 }
 
-.list__container > ul > .list__item-container > .list__item {
+ul > .list__item-container > input[type="checkbox"] {
+  width: 32px;
+  height: 32px;
+}
+
+ul > .list__item-container > .list__item {
   display: inline;
+  max-width: 80%;
+  color: #1b98e0;
+  font-size: 16px;
+  padding: 15px;
 }
 
-.list__container > ul > .list__item-container > span {
+ul > .list__item-container > span {
   cursor: pointer;
+  font-size: 24px;
   position: absolute;
-  width: 12px;
-  height: 12px;
   right: 10px;
-  top: 2px;
-  background-image: url(../images/close.png);
-  background-repeat: round;
 }
 
-.list__container > ul > .list__item-container > .list__item-completed {
+ul > .list__item-container > .list__item-completed {
   text-decoration: line-through;
-}
-
-input {
-  color: white;
-  background-color: #8860d0;
-}
-
-input::placeholder {
-  font-weight: lighter;
-  font-style: italic;
-  color: #fdfffcd8;
 }
