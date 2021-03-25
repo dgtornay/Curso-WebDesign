@@ -1,0 +1,2 @@
+Usar atributo dataset que indique si el elemento está completado o no.
+Sincronizar este atributo con el valor guardado en el localStorage.
