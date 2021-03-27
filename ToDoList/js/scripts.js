@@ -29,7 +29,16 @@ function insertTask(task, isCompleted = false, isStoraged = false) {
 // Mark task as completed
 function markTaskAsCompletedListener (listItemCheckbox) {
   listItemCheckbox.addEventListener('change', function(event) {
-    event.target.parentElement.querySelector('.list__item').classList.toggle('list__item-completed');
+
+    const item = event.target.parentElement;
+    item.querySelector('.list__item').classList.toggle('list__item-completed');
+    item.dataset.completed = item.dataset.completed === "false" ? "true" : "false";
+
+    const elements = getElements();
+    const changedElement = elements.find(arrayElement => arrayElement.task === item.dataset.task);
+    changedElement.completed = changedElement.completed === false ? true : false;
+
+    localStorage.setItem('storageElements',JSON.stringify(elements));
   });
 }
 
