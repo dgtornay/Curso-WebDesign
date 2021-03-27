@@ -8,6 +8,9 @@ function insertTask(task, isCompleted = false, isStoraged = false) {
   const list = document.querySelector('ul');
   list.appendChild(newItem);
 
+  newItem.dataset.task = task;
+  newItem.dataset.completed = isCompleted;
+
   if (isCompleted) {
     newItem.querySelector('.list__item').classList.add('list__item-completed');
   }
@@ -37,8 +40,8 @@ function deleteTaskListener (listItemX) {
     item.parentElement.remove();
 
     // Remove from storage
-    const taskText = item.parentElement.querySelector('.list__item').textContent;
-    const filteredElements = getElements().filter(element => element.task !== taskText);
+    const task = item.parentElement.dataset.task;
+    const filteredElements = getElements().filter(element => element.task !== task);
     localStorage.setItem('storageElements',JSON.stringify(filteredElements));
   });
 }
