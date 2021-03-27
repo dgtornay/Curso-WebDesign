@@ -8,6 +8,8 @@ function insertTask(task, isCompleted = false, isStoraged = false) {
   const list = document.querySelector('ul');
   list.appendChild(newItem);
 
+  newItem.querySelector('input').checked = isCompleted;
+
   newItem.dataset.task = task;
   newItem.dataset.completed = isCompleted;
 
