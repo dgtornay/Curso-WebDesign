@@ -20,16 +20,16 @@ function insertTask(task, isCompleted = false, isStoraged = false) {
   // Add in local storage
   if (!isStoraged) {
     const newElement = {'task':task, 'completed':isCompleted};
-    saveElement(newElement);
+    addElement(newElement);
   }
 
   // Add listeners to new task
-  markTaskAsCompletedListener(newItem.querySelector('input[type="checkbox"]'));
+  toggleTaskCompletedListener(newItem.querySelector('input[type="checkbox"]'));
   deleteTaskListener(newItem.querySelector('span'));
 }
 
-// Mark task as completed
-function markTaskAsCompletedListener (listItemCheckbox) {
+// Toggle task completion
+function toggleTaskCompletedListener (listItemCheckbox) {
   listItemCheckbox.addEventListener('change', function(event) {
 
     const item = event.target.parentElement;
@@ -40,7 +40,7 @@ function markTaskAsCompletedListener (listItemCheckbox) {
     const changedElement = elements.find(arrayElement => arrayElement.task === item.dataset.task);
     changedElement.completed = changedElement.completed === false ? true : false;
 
-    localStorage.setItem('storageElements',JSON.stringify(elements));
+    saveElements(elements);
   });
 }
 
@@ -53,20 +53,33 @@ function deleteTaskListener (listItemX) {
     // Remove from storage
     const task = item.parentElement.dataset.task;
     const filteredElements = getElements().filter(element => element.task !== task);
-    localStorage.setItem('storageElements',JSON.stringify(filteredElements));
+    
+    saveElements(filteredElements);
   });
 }
 
-// Save elements in storage
-function saveElement(newElement) {
+// Add new element to group of elements
+function addElement(newElement) {
   const elements = getElements();
   elements.push(newElement);
-  localStorage.setItem('storageElements',JSON.stringify(elements));
+  saveElements(elements);
 }
 
 // Get elements from storage
 function getElements() {
   return JSON.parse(localStorage.getItem('storageElements'));
+}
+
+// Save elements to storage
+function saveElements(elements) {
+  localStorage.setItem('storageElements',JSON.stringify(elements));
+}
+
+// Check if task already exists in list
+function taskExists(newTask) {
+  const elements = getElements();
+  const existingTasks = elements.map(function(element) { return element.task; });
+  return existingTasks.includes(newTask);
 }
 
 // Startup
@@ -78,24 +91,27 @@ window.addEventListener('DOMContentLoaded', function() {
   if (!getElements()) {
     const savedElements = [];
     localStorage.setItem('storageElements',JSON.stringify(savedElements));
+
   } else {
-    const savedElements = getElements();
-    savedElements.forEach(function(element) {
-      insertTask(element.task, element.completed, true);
-    });
+      const savedElements = getElements();
+      savedElements.forEach(function(element) {
+        insertTask(element.task, element.completed, true);
+      });
   };
 
   form.addEventListener('submit', function (event) {
-    if (textInput.value !== "") {
+    if ((textInput.value !== "") && !taskExists(textInput.value)) {
       insertTask(textInput.value);
-    }
+      
+    } else {alert('Tarea vacía o ya incluida.')}
+
     textInput.value = "";
     event.preventDefault(); 
   });
 
   // Add listeners to items
   listItems.forEach(function(listItem) {
-    markTaskAsCompletedListener(listItem.parentElement.querySelector('input'));
+    toggleTaskCompletedListener(listItem.parentElement.querySelector('input'));
     deleteTaskListener(listItem.parentElement.querySelector('span'));
   }); 
 });
